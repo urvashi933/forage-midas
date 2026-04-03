@@ -6,7 +6,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.2.5</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 	<groupId>com.jpmc</groupId>
 	<artifactId>midas-core</artifactId>
@@ -17,6 +17,54 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
+		<!-- Task 1 REQUIRED dependencies - NO VERSION NEEDED with parent -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<!-- Remove version - managed by spring-boot-starter-parent 3.2.5 -->
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka</artifactId>
+			<version>3.1.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>2.2.224</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka-test</artifactId>
+			<version>3.1.4</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>kafka</artifactId>
+			<version>1.19.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- REMOVE THESE - cause version conflicts -->
+		<!-- <dependency> hibernate-core 6.5.2.Final </dependency> -->
+		<!-- <dependency> lombok </dependency> -->
 	</dependencies>
 
 	<build>
@@ -27,5 +75,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

@@ -9,15 +9,18 @@ public class Transaction {
     private float amount;
     private Incentive incentive;
 
+    // Default constructor for Jackson/Kafka deserialization
     public Transaction() {
     }
 
+    // Constructor for test data creation
     public Transaction(long senderId, long recipientId, float amount) {
         this.senderId = senderId;
         this.recipientId = recipientId;
         this.amount = amount;
     }
 
+    // Getters and Setters
     public long getSenderId() {
         return senderId;
     }
@@ -41,17 +44,19 @@ public class Transaction {
     public void setAmount(float amount) {
         this.amount = amount;
     }
-    
+
     public Incentive getIncentive() {
         return incentive;
     }
-    
+
     public void setIncentive(Incentive incentive) {
         this.incentive = incentive;
     }
 
     @Override
     public String toString() {
-        return "Transaction {senderId=" + senderId + ", recipientId=" + recipientId + ", amount=" + amount + "}";
+        return "Transaction {senderId=" + senderId + 
+               ", recipientId=" + recipientId + 
+               ", amount=" + amount + "}";
     }
 }
